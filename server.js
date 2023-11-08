@@ -48,6 +48,17 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         res.status(500).json({ error: 'Error uploading the file' });
     }
 });
+app.post('/api/verify-recaptcha', async (req, res) => {
+    const { token } = req.body;
+    const googleRecaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=6LfBdAUpAAAAAJi3j1avHi_fJEI4nPozFnTXyomC&response=${token}`;
+    const response = await axios.post(googleRecaptchaVerifyUrl);
+    const { success } = response.data;
+    res.json({ success });
+  });
+  
+  app.listen(3001, () => {
+    console.log('Server is running on port 3001');
+  });
 app.use(cors(corsOptions));
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);

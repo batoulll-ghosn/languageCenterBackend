@@ -6,9 +6,9 @@ const port_c=process.env.port_c;
 const connection = mysql.createPool({
   host: HOST,
   port: port_c,
-  user: "sql12658523",
-  password: "hFgQQJ595Z",
-  database: "sql12658523",
+  user: "sql12659926",
+  password: "LtLdBAcSdW",
+  database: "sql12659926",
 });
 
 connection.getConnection((err) => {
