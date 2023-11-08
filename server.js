@@ -50,7 +50,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 });
 app.post('/api/verify-recaptcha', async (req, res) => {
     const { token } = req.body;
-    const googleRecaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=6LfBdAUpAAAAAJi3j1avHi_fJEI4nPozFnTXyomC&response=${token}`;
+    const googleRecaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=6LfVPAYpAAAAAO-w-zQtNyQDIJN7Ixj9XQfvei0w&response=${token}`;
     const response = await axios.post(googleRecaptchaVerifyUrl);
     const { success } = response.data;
     res.json({ success });
