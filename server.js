@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 require('./config/db');
 const userRoutes = require('./routes/userRoute');
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://language-learning-center1212.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }
