@@ -9,12 +9,12 @@ const PORT = process.env.PORT;
 require('./config/db');
 const userRoutes = require('./routes/userRoute');
 const corsOptions = {
-    origin: 'https://language-learning-center1212.onrender.com',
+    origin: 'language-learning-center1212.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://language-learning-center1212.onrender.com');
+    res.setHeader('Access-Control-Allow-Origin', 'language-learning-center1212.onrender.com');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
